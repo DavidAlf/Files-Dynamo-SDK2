@@ -1,11 +1,13 @@
 package com.proyecto.archivos_dynamo.infrastructure.adapter.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Generated;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 
+@Generated
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString

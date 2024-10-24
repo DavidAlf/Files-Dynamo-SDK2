@@ -7,11 +7,13 @@ import org.springframework.context.annotation.Configuration;
 import com.proyecto.archivos_dynamo.infrastructure.adapter.FileAdapter;
 import com.proyecto.archivos_dynamo.infrastructure.config.util.mapper.ModelMapperUtil;
 
+import lombok.Generated;
 import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 
+@Generated
 @Configuration
 public class DynamoDBConfig {
 

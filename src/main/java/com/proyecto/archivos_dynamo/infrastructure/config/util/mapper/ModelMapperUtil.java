@@ -8,6 +8,9 @@ import org.modelmapper.ModelMapper;
 
 import com.proyecto.archivos_dynamo.infrastructure.config.util.tags.Mapper;
 
+import lombok.Generated;
+
+@Generated
 @Mapper
 public class ModelMapperUtil {
 
