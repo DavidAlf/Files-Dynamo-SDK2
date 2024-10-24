@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AWS Serverless WatchDynamoFiles
+Globals:
+  Api:
+    EndpointConfiguration: REGIONAL
+
+Resources:
+  AwsWatchDynamoFiles:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.proyecto.archivos_dynamo.StreamLambdaHandler::handleRequest
+      Runtime: java21
+      FunctionName: "WatchDynamoFiles_JDAO"
+      CodeUri: .
+      MemorySize: 512
+      Role: arn:aws:iam::762233751220:role/billpay-lambda-rol
+      Timeout: 30
+      Events:
+        ProxyResource:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: any
+
+Outputs:
+  AwsWatchDynamoFiles:
+    Description: URL for application
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/ping'
+    Export:
+      Name: AwsWatchDynamoFiles
